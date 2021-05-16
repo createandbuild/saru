@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Adversarial-Attack Protection for Protestors">
+        <meta name="author" content="TurKimPan">
+
+        <title>saru</title>
+        <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/graphics/favicon.png"> -->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">   <!-- bulma -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename= 'css/debug.css') }}"> -->
+
+        <!-- <script type="text/javascript">
+          window.addEventListener('load', function() {
+            document.querySelector('input[type="file"]').addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    var img = document.querySelector('img');
+                    img.onload = () => {
+                        URL.revokeObjectURL(img.src);  
+                    }
+          
+                    img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+                }
+            });
+            document.getElementById("myImg").style.display = "none"; 
+            
+          });
+          </script> -->
+    </head>
+
+    <body>
+      <section class="hero is-fullheight">
+        <nav class="hero-head">
+          <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+            <div class="column left">
+              <figure class="navbar-item image">
+                <img src="{{url_for('static', filename='img/saru_logo.jpg')}}" style="width: auto; height: 100%;">  <!-- edit the image sizing -->
+              </figure>
+            </div>
+            <div class="column right">
+              <a href="{{ url_for('index', _anchor='saru_post')}}" class="button is-link is-rounded has-text-weight-normal is-lowercase">saru my post</a>
+              <!-- <figure class="navbar-item image has-text-white center">
+                <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+              </figure> -->
+            </div>
+          </div>
+        </nav>
+
+        <header class="hero-body">
+          <div class="is-overlay has-text-centered single-spaced" style="top: 182px">
+            <h1 class="subtitle is-4 has-text-white has-text-weight-light">PROTECT THE</h1>
+            <h2 class="title is-1 has-text-white">MÖNKE</h2>
+          </div>
+        </header>
+
+        <main class="hero-foot center" style="padding: 2rem;">
+          <div id="grid" style="width: 768px;">
+            <div id="a" class="center-column">
+              <p class="has-text-centered has-text-white">
+                best mango trebuchet<br>
+                to protect all the mönke.
+              </p>
+            </div>
+            <!-- <div id="b" class="center-column">
+              <p class="title has-text-white">
+                <i class="fas fa-tachometer-alt has-text-grey-light"
+                  style="width: 0.75em; height: 0.75em;"></i>
+                1.9<span class="is-size-5">s</span>
+              </p>
+              <p class="subtitle has-text-white is-7">0-60 mph</p>
+            </div>
+            <div id="c" class="center-column" style="border-left: 1px solid gray;">
+              <p class="title has-text-white"><span class="is-size-5">+</span>250<span class="is-size-5">mph</span></p>
+              <p class="subtitle is-7 has-text-white">Top Speed</p>
+            </div>
+            <div id="d" class="center-column" style="border-left: 1px solid gray;">
+              <p class="title has-text-white">620</span><span class="is-size-5">mi</span></p>
+              <p class="subtitle is-7 has-text-white">Mile Range</p>
+            </div> -->
+            <div id="e" class="center-column">
+              <a href="{{ url_for('index', _anchor='saru_blurb')}}" class="button is-link is-inverted is-rounded is-outlined has-text-weight-bold"
+                style="border: 0.15em solid white;">
+                CONTINUE
+              </a>
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <section id="saru_blurb" class="section is-paddingless-horizontal" style="padding-top: 5rem;">
+        <div class="content grid-col">
+          <div class="content is-medium">
+            <p>
+              If you’re like me, you’re interested in the web and its overwhelming reach, but you’re also inundated with the mess of information that is learning HTML and CSS.
+              The thing is, these languages are unlike other domains, like Word Processors and Programming Languages.
+              <strong>The web is another world</strong>, and it’s not the prettiest thing around.
+            </p>
+            <p>
+              Having learned me some web, I’m here to give a gentle push of encouragement, because, <strong>with a little guidance</strong>, these domains can be a lot easier than you imagine.
+              Continue reading, and we’ll build a beautiful blog from scratch.
+              We’ll also learn some CSS Grid, Flexbox, and Responsive Design.
+            </p>
+          </div>
+        </div>
+
+        <figure class="columns is-mobile is-variable is-8 is-marginless grid-xl center">
+          <div class="column is-4">
+            <div class="image">
+              <img src="https://bulma.io/images/placeholders/128x128.png">
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="image">
+              <img src="https://bulma.io/images/placeholders/128x128.png">
+            </div>
+          </div>
+        </figure>
+        <figcaption class="level">
+          <small class="level-item has-text-grey">I love mangos so much</small>
+        </figcaption>
+
+        <div class="content grid-col">
+          <div class="content is-medium">
+            <p>
+              If you’re like me, you’re interested in the web and its overwhelming reach, but you’re also inundated with the mess of information that is learning HTML and CSS.
+              The thing is, these languages are unlike other domains, like Word Processors and Programming Languages.
+              <strong>The web is another world</strong>, and it’s not the prettiest thing around.
+            </p>
+            <p>
+              Having learned me some web, I’m here to give a gentle push of encouragement, because, <strong>with a little guidance</strong>, these domains can be a lot easier than you imagine.
+              Continue reading, and we’ll build a beautiful blog from scratch.
+              We’ll also learn some CSS Grid, Flexbox, and Responsive Design.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="saru_post" class="section is-paddingless-horizontal notification">
+        <h1 class="title has-text-black has-text-weight-bold center">saru my post</h1>
+        <!-- <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+          <div class="file has-name">
+            <label class="file-label">
+              <input class="file-input" type = "file" name = "file"/>
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file…
+                </span>
+              </span>
+              <span class="file-name">
+                Screen Shot 2017-07-29 at 15.54.25.png
+              </span>
+            </label>
+          </div>
+          <input type = "submit"/>
+        </form> -->
+
+        <!-- <a class="button button is-dark is-fullwidth is-medium">
+          <span class="icon is-small">
+              <i class="fas fa-upload"></i>
+          </span>
+          <span>Upload image</span>
+          <input type="file" accept="image/*" onchange="showMyImage(this)" value=""
+          class="button button is-dark chooseFile" />
+        </a> -->
+
+        <!-- <form action="" method=post enctype=multipart/form-data>
+          <input type=file accept="image/*" name=file>
+          <input type=submit value=Upload>
+        </form> -->
+
+        <!-- {% if filename %}
+          <h1>some text<img src="{{filename}}"> more text!</h1>
+        {% else %}
+          <h1>no image for whatever reason</h1>
+        {% endif %} -->
+
+        <!-- <div class="file has-name form-group">
+          <label class="file-label">
+            <input class="file-input" type="file" name="file">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Choose a file…
+              </span>
+            </span>
+          </label>
+        </div> -->
+
+        <!-- <form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form> -->
+
+      <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
+        <div class="column is-4 center">
+          <form method="post" enctype="multipart/form-data">
+            <input type="file" onchange="this.form.submit()" name="file" id="file" class="inputfile" >
+            <!-- <input class="file-input inputfile" type="file" name="file" onchange="this.form.submit()"> -->
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Import your photo
+              </span>
+            </span>
+            <!-- <input type="submit" value="Upload" class="inputfile"> -->
+            <!-- <label for="file">Choose a file</label> -->
+            {% if filename is not none %}
+            <br><br><img id="myImg" src="{{filename}}" width="300" />
+            {% else %}
+            <!-- <br><img id="myImg" src="#" width="300" /> -->
+            {% endif %}
+          </form>
+        </div>
+        <div class="column is-4">
+          <form method="post">
+            <div class="form-group">
+                <textarea name="content" placeholder="Post Comment"
+                          class="textarea is-medium" rows="10">{{ request.form['content'] }}</textarea>
+            </div>
+            <div class="form-group" style="padding-top: 1rem;">
+                <button type="submit" class="button is-info is-outlined">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      </section>
+
+
+
+
+
+
+
+
+      <!-- blog -->
+        <!-- <section class="section is-paddingless-horizontal">
+          <div class="container grid">
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li class="is-active"><a href="#" aria-current="page">How to build a beautiful blog</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <section class="section is-paddingless-horizontal" style="padding-top: 0;">
+          <div class="container grid">
+            <article class="media center">
+              <figure class="media-left">
+                            <figure class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                                    <strong>Zaydek Michels-Gualtieri</strong>
+                                    <a>@username_zaydek</a><br>
+                    <span class="has-text-grey">Self-taught, inspired to learn<br>
+                    <time datetime="2018-04-20">Apr 20</time> · 20 min read</span>
+                                </p>
+                </div>
+              </div>
+            </article>
+
+            <div class="section is-paddingless-horizontal">
+                <h1 class="title is-2">How to build</h1>
+                <h2 class="subtitle is-3 has-text-grey-light">I love mangos</h2>
+            </div>
+
+            <figure class="columns is-mobile is-variable is-1 is-marginless grid-xl">
+              <div class="column">
+                <div class="image card">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </div>
+              </div>
+              <div class="column">
+                <div class="image card">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </div>
+              </div>
+              <div class="column">
+                <div class="image card">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </div>
+              </div>
+            </figure>
+            <figcaption class="level">
+              <small class="level-item has-text-grey">I love mangos so much</small>
+            </figcaption>
+
+            <div class="content is-medium notification">
+              <p>
+                If you’re like me, you’re interested in the web and its overwhelming reach, but you’re also inundated with the mess of information that is learning HTML and CSS.
+                The thing is, these languages are unlike other domains, like Word Processors and Programming Languages.
+                <strong>The web is another world</strong>, and it’s not the prettiest thing around.
+              </p>
+              <p>
+                Having learned me some web, I’m here to give a gentle push of encouragement, because, <strong>with a little guidance</strong>, these domains can be a lot easier than you imagine.
+                Continue reading, and we’ll build a beautiful blog from scratch.
+                We’ll also learn some CSS Grid, Flexbox, and Responsive Design.
+              </p>
+            </div>
+
+          </div>
+        </section> -->
+
+      <!-- slides website -->
+        <!-- <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <figure class="image center">
+                        <img src="https://bulma.io/images/placeholders/128x128.png" style="max-width: 120px;">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section has-background-light">
+			<div class="container">
+				<div class="columns">
+					<div class="column">
+                        <article class="media notification is-info">
+                            <figure class="media-left">
+                                <span class="icon is-medium">
+                                    <i class="fab fa-2x fa-css3-alt"></i>
+                                </span>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <h1 class="title is-size-4">mango</h1>
+                                    <p class="is-size-5">lorem ipsum yayay</p>
+                                </div>
+                            </div>
+                        </article>
+					</div>
+                    <div class="column">
+						<div class="notification is-link">
+                            <h1 class="title is-size-4">apple</h1>
+                            <p class="is-size-5">lorem ipsum yayay</p>
+                        </div>
+					</div>
+                    <div class="column">
+						<div class="notification is-warning">
+                            <h1 class="title is-size-4">title</h1>
+                            <p class="is-size-5">lorem ipsum yayay</p>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+    </body>

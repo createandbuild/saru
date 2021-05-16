@@ -16,9 +16,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['EXPORT_FOLDER'] = EXPORT_FOLDER
 app.config["DEBUG"] = True
 
-
-@app.route('/', methods=['GET', 'POST'])
-def home(filename=None, image=None, caption=None):
+@app.route('/')
+def index(filename=None):
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -36,27 +35,32 @@ def home(filename=None, image=None, caption=None):
             full_filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(full_filename)
 
-        adversarial.attack(full_filename)
-        defended_image=os.path.join(app.config['EXPORT_FOLDER'], 'defended.jpg')
-        clean_image=os.path.join(app.config['EXPORT_FOLDER'], 'out_clean.jpg')
-        adv_image=os.path.join(app.config['EXPORT_FOLDER'], 'out_adv.jpg')
-
-        caption = "JIGGLY PUFF!"
-
-        return render_template('base.html', filename=full_filename,
-                image=defended_image, caption=caption)
-
+        return render_template('base.html', filename=full_filename)
+    
     elif request.method == 'GET':
-        return render_template('base.html', filename=filename, image=defended_image, caption=caption)
+        return render_template('base.html', filename=filename)
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+# def upload_file():
+#     if request.method == 'POST':
+#         file = request.files['file']
+#         if file and allowed_file(file.filename):
+#             filename = secure_filename(file.filename)
+#             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#             return redirect(url_for('uploaded_file', filename=filename))
+#     return
 
-@app.route('/cv', methods=['POST'])
-def image_text_summary():
-    return
+# @app.route('/show/<filename>')
+# def uploaded_file(filename):
+#     filename = 'http://127.0.0.1:5000/uploads/' + filename
+#     return render_template('template.html', filename=filename)
+
+# @app.route('/uploads/<filename>')
+# def send_file(filename):
+#     return send_from_directory(UPLOAD_FOLDER, filename)
 
 @app.route('/javascript/<path:path>')
 def send_js(path):
@@ -65,6 +69,3 @@ def send_js(path):
 @app.route('/uploads/<filename>')
 def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
-
-# if __name__ == "__main__":
-#     app.run()

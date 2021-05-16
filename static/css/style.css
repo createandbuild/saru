@@ -1,0 +1,312 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"; */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.center, .center-column, .top, .right, .bottom, .left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+
+.top    { align-items:     flex-start; }
+.right  { justify-content: flex-end;   }
+.bottom { align-items:     flex-end;   }
+.left   { justify-content: flex-start; }
+
+.single-spaced, .single-spaced * {
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+	.desktop {
+		display: none;
+	}
+}
+
+.hero {
+  background: black url(images/hero-1.jpg) center / cover;
+}
+
+@media (max-width: 1024px) {
+  .hero { background: black url(images/hero-2.jpg) center / cover; }
+}
+@media (max-width: 768px) {
+  .hero { background: black url(images/hero-3.jpg) center / cover; }
+}
+
+#a { grid-area: a; }
+#b { grid-area: b; }
+
+#grid {
+  display: grid;
+  grid-template-areas:
+      "a"
+      "b";
+
+  row-gap: 1rem;
+}
+
+.grid-col {
+  display: grid;
+  grid-template-columns:
+    [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+}
+
+.grid-col *  { grid-column: md; }
+.grid-col-xl { grid-column: xl; }
+
+/* @media (max-width: 512px) {
+  #grid {
+      grid-template-areas:
+          "a a a"
+          "b c d"
+          "e e e";
+  }
+} */
+
+@media (max-width: 572px) {
+  :root {
+    font-size: 80%;
+  }
+}
+
+.is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+/* blog css */
+/* .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+.grid {
+    display: grid;
+    grid-template-columns:
+        [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+}
+
+.grid *  { grid-column: md; }
+.grid-xl { grid-column: xl; }
+
+@media (max-width: 572px) {
+  :root {
+    font-size: 80%;
+  }
+} */
+
+/* @font-face {
+    font-family: inter;
+    src: url(../font/Inter-VariableFont_slnt,wght.ttf);
+}
+
+body {
+    background-color: #f9fafb;
+}
+
+.navbar {
+    font-family: inter;
+    color: #374151;
+    background-color: #f9fafb; 
+} */
+
+/* @font-face {
+    font-family: inter;
+    src: url(../font/Inter-VariableFont_slnt,wght.ttf);
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #f9fafb;
+    color: #374151;
+    font-family: inter;
+}
+
+.container {
+    margin: 0 18%;
+    padding: 32px 24px;
+}
+
+
+navbar
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 0 24px;
+    text-decoration: none;
+    color: #374151;
+}
+
+.navbar #home {
+    padding: 0;
+}
+
+.navbar a:hover {
+    color: #000;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+.navbar .list-item {
+    padding: 2.4px 8px;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {display: none}
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .navbar.responsive {position: relative;}
+    .navbar.responseive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+} */
+
+/* 
+.navbar {
+    width: 100%;
+    height: 48px;
+    margin: inherit;
+    margin: 0 8%;
+    OVERRIDE WITH YOUR OWN BG COLOR
+    position: fixed;
+    position: static;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+  
+  .navbar-inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  .navbar-items {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  #navbar-check {
+    display: none;
+  }
+  
+  @media (min-width: 600px) {
+    .navbar-inner {
+      max-width: 1200px;
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+    }
+    .navbar-hamburger {
+      display: none;
+    }
+    .navbar-right .navbar-items {
+      margin-left: auto;
+    }
+    .navbar-right .navbar-items .navbar-item {
+      margin-left: 8px;
+    }
+    .navbar-left .navbar-item {
+      margin-right: 8px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .navbar-inner {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+    .navbar-items {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 300px;
+      background-color: #eee;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column nowrap;
+              flex-flow: column nowrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+    .navbar-hamburger {
+      position: absolute;
+      z-index: 6;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+    .navbar-left .navbar-items {
+      left: 0;
+      margin-left: -100%;
+      -webkit-transition: margin-left 0.2s ease;
+      transition: margin-left 0.2s ease;
+    }
+    .navbar-left #navbar-check:checked ~ .navbar-items {
+      margin-left: 0;
+    }
+    .navbar-left .navbar-hamburger {
+      left: 24px;
+      OVERRIDE WITH YOUR OWN HAMBURGER BUTTON MARGIN
+    }
+    .navbar-right .navbar-items {
+      right: 0;
+      margin-right: -100%;
+      -webkit-transition: margin-right 0.2s ease;
+      transition: margin-right 0.2s ease;
+    }
+    .navbar-right #navbar-check:checked ~ .navbar-items {
+      margin-right: 0;
+    }
+    .navbar-right .navbar-hamburger {
+      right: 24px;
+      OVERRIDE WITH YOUR OWN HAMBURGER BUTTON MARGIN
+    }
+    div.navbar-item:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+  } */
