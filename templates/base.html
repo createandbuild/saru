@@ -191,16 +191,19 @@
       <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
         <form method="post" enctype="multipart/form-data" style="display: flex;">
         <div class="column">
-            <input type="file" name="file" id="file" class="inputfile" >
-            <!-- <input class="file-input inputfile" type="file" name="file" onchange="this.form.submit()"> -->
-            <span class="file-cta">
-              <span class="file-icon">
-                <i class="fas fa-upload"></i>
+          <div class="file has-name">
+            <label class="file-label">
+              <input type="file" name="file" id="file" class="inputfile file-input">
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file…
+                </span>
               </span>
-              <span class="file-label">
-                Import your photo
-              </span>
-            </span>
+            </label>
+          </div>
             <!-- <input type="submit" value="Upload" class="inputfile"> -->
             <!-- <label for="file">Choose a file</label> -->
             {% if filename is not none %}
@@ -209,7 +212,7 @@
             <!-- <br><img id="myImg" src="#" width="300" /> -->
             {% endif %}
         </div>
-        <div class="column is-4">
+        <div class="column">
             <div class="form-group">
                 <textarea name="content" placeholder="Post Comment"
                           class="textarea is-medium" rows="7">{{ request.form['content'] }}</textarea>
