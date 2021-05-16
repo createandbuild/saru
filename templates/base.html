@@ -28,7 +28,7 @@
               </figure>
             </div>
             <div class="column right">
-              <a href="{{ url_for('home', _anchor='saru_post')}}" class="button is-link is-rounded has-text-weight-normal is-lowercase">saru my post</a>
+              <a href="{{ url_for('home', _anchor='saru_post')}}" class="button is-link is-rounded has-text-weight-normal is-lowercase">Saru my post</a>
               <!-- <figure class="navbar-item image has-text-white center">
                 <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
               </figure> -->
@@ -219,7 +219,7 @@ Thus, we made <strong><i>saru</i></strong> to help protect protestors' social me
         </form>
       </div>
 
-      <h1 class="title has-text-black has-text-weight-bold center" style="padding-top: 2rem;">results</h1>
+      <h1 class="title has-text-black has-text-weight-bold center" style="padding-top: 2rem;">Results</h1>
       <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
         <div class="column is-4 center">
           {% if image is not none %}
@@ -233,6 +233,7 @@ Thus, we made <strong><i>saru</i></strong> to help protect protestors' social me
           <div class="control">
             {% if caption is not none %}
             <textarea class="textarea is-medium" readonly rows="7">{{ caption }}</textarea>
+            72% <b>NEGATIVE</b> to 75% <b>NEUTRAL</b>
             {% endif %}
           </div>
         </div>
