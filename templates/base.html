@@ -115,7 +115,12 @@ Thus, we made <strong><i>saru</i></strong> to help protect protestors' social me
         <div class="content grid-col">
           <div class="content is-medium">
             <p>
-              Saru utilizes two grey-box adversarial attacks, one for avoiding facial recognition and one for avoiding sentiment analysis.
+              Saru utilizes <strong>two grey-box adversarial attacks</strong>, one for avoiding facial recognition and one for avoiding sentiment analysis. We transfer a <i>projected-gradient-descent attack tuned on a FaceNet model</i> to modify the input image to prevent facial matching between the input image and a database of identities. To modify the caption, we use the novel <i>TextFooler algorithm</i> to flip the predicted sentiment of a caption, thus avoiding governmental detection.
+            </p>
+            <p>
+              We're proud of creating such a technically difficult project. Adding two novel machine learning techniques into our backend and ultimately integrating everything into one cohesive project was difficult but rewarding.
+
+We've learned a lot about how frighteningly good machine learning models today are but how adversarial attack methods can subvert such models.
             </p>
           </div>
         </div>
@@ -219,7 +224,7 @@ Thus, we made <strong><i>saru</i></strong> to help protect protestors' social me
         </form>
       </div>
 
-      <h1 class="title has-text-black has-text-weight-bold center" style="padding-top: 2rem;">Results</h1>
+      <h1 class="title has-text-black has-text-weight-bold center" style="padding-top: 2rem;">results</h1>
       <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
         <div class="column is-4 center">
           {% if image is not none %}
