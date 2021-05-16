@@ -210,12 +210,11 @@ def attack(path):
     target_embeddings = model.compute_target_embedding('data/mlk')
     img = PIL.Image.open(path)
 
-    identities = model.detect_people(img, out_path="data/out_clean.jpg")
+    identities = model.detect_people(img, out_path="data/exports/out_clean.jpg")
     defended_image = model.perturb_all_faces(img)
-    cv2.imwrite('data/defended.jpg', cv2.cvtColor(defended_image, cv2.COLOR_RGB2BGR))
+    cv2.imwrite('data/exports/defended.jpg', cv2.cvtColor(defended_image, cv2.COLOR_RGB2BGR))
 
-    testing = PIL.Image.open("data/defended.jpg")
-    adv_identities = model.detect_people(testing, out_path="data/out_adv.jpg")
+    testing = PIL.Image.open("data/exports/defended.jpg")
+    adv_identities = model.detect_people(testing, out_path="data/exports/out_adv.jpg")
 
-attack("data/testing/4.jpg")
 
