@@ -31,7 +31,7 @@ html {
 }
 
 .hero {
-  background: black url(images/hero-1.jpg) center / cover;
+  background: black url(../img/protest.jpeg) center / cover;
 }
 
 @media (max-width: 1024px) {

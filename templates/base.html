@@ -53,7 +53,7 @@
         </nav>
 
         <header class="hero-body">
-          <div class="is-overlay has-text-centered single-spaced" style="top: 182px">
+          <div class="is-overlay has-text-centered single-spaced" style="top: 100px">
             <h1 class="subtitle is-4 has-text-white has-text-weight-light">PROTECT THE</h1>
             <h2 class="title is-1 has-text-white">MÖNKE</h2>
           </div>
@@ -229,7 +229,7 @@
           <form method="post">
             <div class="form-group">
                 <textarea name="content" placeholder="Post Comment"
-                          class="textarea is-medium" rows="10">{{ request.form['content'] }}</textarea>
+                          class="textarea is-medium" rows="7">{{ request.form['content'] }}</textarea>
             </div>
             <div class="form-group" style="padding-top: 1rem;">
                 <button type="submit" class="button is-info is-outlined">Submit</button>
@@ -238,11 +238,23 @@
         </div>
       </div>
 
-      </section>
-
-      <section class="section is-paddingless-horizontal notification">
-        <h1 class="title has-text-black has-text-weight-bold center">results</h1>
-        
+      <h1 class="title has-text-black has-text-weight-bold center" style="padding-top: 2rem;">results</h1>
+      <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
+        <div class="column is-4 center">
+          <h1 class="title is-3">image</h1>
+          {% if image is not none %}
+          <img id="result_img" src="{{image}}" width="300" />
+          {% endif %}
+          <!-- image result -->
+        </div>
+        <div class="column is-4">
+          <div class="control">
+            {% if caption is not none %}
+            <textarea class="textarea is-medium" readonly rows="7">{{ caption }}</textarea>
+            {% endif %}
+          </div>
+        </div>
+      </div>
 
       </section>
 
