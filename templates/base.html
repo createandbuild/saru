@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">   <!-- bulma -->
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename= 'css/debug.css') }}"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/debug.css') }}">
 
         <!-- <script type="text/javascript">
           window.addEventListener('load', function() {
@@ -204,9 +204,9 @@
       </form> -->
 
       <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
+        <form method="post" enctype="multipart/form-data" style="display: initial;">
         <div class="column is-4 center">
-          <form method="post" enctype="multipart/form-data">
-            <input type="file" onchange="this.form.submit()" name="file" id="file" class="inputfile" >
+            <input type="file" name="file" id="file" class="inputfile" >
             <!-- <input class="file-input inputfile" type="file" name="file" onchange="this.form.submit()"> -->
             <span class="file-cta">
               <span class="file-icon">
@@ -223,10 +223,8 @@
             {% else %}
             <!-- <br><img id="myImg" src="#" width="300" /> -->
             {% endif %}
-          </form>
         </div>
         <div class="column is-4">
-          <form method="post">
             <div class="form-group">
                 <textarea name="content" placeholder="Post Comment"
                           class="textarea is-medium" rows="7">{{ request.form['content'] }}</textarea>
@@ -234,16 +232,17 @@
             <div class="form-group" style="padding-top: 1rem;">
                 <button type="submit" class="button is-info is-outlined">Submit</button>
             </div>
-          </form>
         </div>
+        </form>
       </div>
 
       <h1 class="title has-text-black has-text-weight-bold center" style="padding-top: 2rem;">results</h1>
       <div class="columns is-mobile is-variable is-4 is-marginless grid-xl center">
         <div class="column is-4 center">
-          <h1 class="title is-3">image</h1>
           {% if image is not none %}
-          <img id="result_img" src="{{image}}" width="300" />
+            <br><br><img id="result_img" src="{{image}}" width="300" />
+          {% else %}
+            <!-- <br><img id="myImg" src="#" width="300" /> -->
           {% endif %}
           <!-- image result -->
         </div>
