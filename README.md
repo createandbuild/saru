@@ -1,6 +1,8 @@
 # saru
 
 ![logo](static/img/saru_logo.jpg)
+![demo](https://user-images.githubusercontent.com/12959037/118404447-ddc88400-b640-11eb-8f8a-938063e4f3b1.gif)
+
 
 ## Inspiration
 
