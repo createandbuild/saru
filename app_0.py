@@ -47,7 +47,7 @@ def home(filename=None, image=None, caption=None):
                 image=defended_image, caption=caption)
 
     elif request.method == 'GET':
-        return render_template('base.html', filename=filename, image=defended_image, caption=caption)
+        return render_template('base.html', filename=filename, image=image, caption=caption)
 
 def allowed_file(filename):
     return '.' in filename and \
